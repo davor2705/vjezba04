@@ -1,5 +1,6 @@
 import { Component } from "react";
 import Button from "./Button";
+import Clock from "./Clock";
 
 class App extends Component {
     state = {
@@ -14,8 +15,12 @@ class App extends Component {
 
     render() {
         const { showClock } = this.state;
+
         return (
-            <div>
+            <div> 
+              {
+                showClock && <Clock />
+              }
                 <Button clickListener={this.toggleClock}>
                   {showClock ? "Ukloni me" : "Prikaži me"}</Button>
             </div>
